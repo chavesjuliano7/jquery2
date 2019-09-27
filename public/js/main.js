@@ -1,5 +1,6 @@
 var tempoInicial = $( '.tempo-segundos' ).text();
 var campo= $('.campo-digitacao')
+var frase = $('.frase').text()
 
 
 
@@ -11,7 +12,7 @@ var campo= $('.campo-digitacao')
 
 //     inicializarCronometro();
 
-//     zerarCronometro()
+//      $('#botao-reiniciar').click(reiniciarJogo)
 
 // })
 
@@ -19,7 +20,8 @@ $(function(){
     atualizarTamanhoDaFrase();
     inicializarContadores();
     inicializarCronometro();
-    zerarCronometro();
+    inicializaMarcadores();
+    $('#botao-reiniciar').click(reiniciarJogo)
 
 })
 
@@ -56,8 +58,11 @@ function inicializarContadores( ) {
 function inicializarCronometro( ) {
 
     var tempoRestante = parseInt( $( '.tempo-segundos' ).text() );
+    var botao = $('#botao-reiniciar')
 
     campo.one('focus', function( ){
+
+            botao.attr('disabled', true);
 
         var intervalID = setInterval( function(){
 
@@ -65,9 +70,13 @@ function inicializarCronometro( ) {
 
             if(tempoRestante < 1 ){
 
+                botao.attr('disabled', false);
+
                 campo.attr('disabled', true);
 
-                clearInterval(intervalID)
+                clearInterval(intervalID);
+
+                campo.toggleClass('campo-desativado');
 
             }
 
@@ -80,24 +89,46 @@ function inicializarCronometro( ) {
 
 
 
-function zerarCronometro() {
+function reiniciarJogo( ) {
 
-    var botao = $('#botao-reiniciar').on('click', function ( ) {
+    $('.tempo-segundos').text(tempoInicial);
+    $('.contador-caracteres').text('0');
+    $('.contador-palavras').text('0')
+    campo.toggleClass('campo-desativado');
 
-        $('.tempo-segundos').text(tempoInicial);
-        $('.contador-caracteres').text('0');
-        $('.contador-palavras').text('0')
+    campo.attr('disabled', false)
+    campo.val('');
+    campo.removeClass('borda-verde')
+    campo.removeClass('borda-vermelha')
 
-        campo.attr('disabled', false)
-        campo.val('');
+    inicializarCronometro( )
 
-        inicializarCronometro( )
+}
+
+function inicializaMarcadores( ) {
+
+    campo.on('input', function () {
+
+        var digitado = campo.val()
+        var comparavel = frase.substr(0, digitado.length )
+
+        digitado == comparavel ? console.log('ok') : console.log('errado');
+
+        if ( digitado == comparavel ){
+
+            campo.removeClass('borda-vermelha')
+            campo.addClass('borda-verde')
+
+
+        } else {
+
+            campo.removeClass('borda-verde')
+            campo.addClass('borda-vermelha')
+        }
 
     })
 }
 
 
-
-
-
+console.log("ECMA Script 6".startsWith("ECMdA"));
 

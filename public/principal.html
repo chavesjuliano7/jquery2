@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Alura Typer</title>
-  </head>
 
-  <body>
-    <h1>Alura Type</h1>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/libs/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <p class="frase">Eu tenho cinco lindas palavras?</p>
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Alura Typer</title>
+</head>
 
-    <ul class="informacoes">
-      <li><span id="tamanho-frase">30</span> palavras</li>
-      <li><span class="tempo-segundos">3</span> segundos</li>
+<body>
+  <div class="container">
+    <h1 class="center">Alura Type</h1>
+
+    <p class="frase center">você esta ai meu amor</p>
+
+    <ul class="informacoes center">
+
+      <li>
+
+        <i class="small material-icons icone">description</i>
+        <span id="tamanho-frase">30</span>palavras
+
+      </li>
+
+      <li>
+
+        <i class="small material-icons icone">query_builder</i>
+        <span class="tempo-segundos">10</span> segundos</li>
+
     </ul>
 
-    <textarea  class="campo-digitacao" cols="30" rows="10"></textarea>
-    <button id="botao-reiniciar">reinicar Jogo</button>
-    <ul>
+    <textarea class="campo-digitacao" cols="30" rows="10"></textarea>
+
+    <div class="botoes">
+        <a id="botao-reiniciar" disabled class="btn-floating  btn-large center-alignwaves-light red">
+          <i class="material-icons">restore</i>
+        </a>
+
+    </div>
+
+    <ul class='center'>
+
       <li><span class="contador-caracteres">0</span> caracteres</li>
-      <li><span class="contador-palavras">0</span>  palavras</li>
-    </ul>
+      <li><span class="contador-palavras">0</span> palavras</li>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    </ul>
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
