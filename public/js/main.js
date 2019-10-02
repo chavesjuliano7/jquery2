@@ -3,7 +3,6 @@ var campo= $('.campo-digitacao')
 var frase = $('.frase').text()
 
 
-
 // $(document).ready( function () {
 
 //     atualizarTamanhoDaFrase();
@@ -22,6 +21,7 @@ $(function(){
     inicializarCronometro();
     inicializaMarcadores();
     $('#botao-reiniciar').click(reiniciarJogo)
+    $('.botao-remover').on('click', deletaLinha);
 
 })
 
@@ -62,7 +62,7 @@ function inicializarCronometro( ) {
 
     campo.one('focus', function( ){
 
-            botao.attr('disabled', true);
+        botao.attr('disabled', true);
 
         var intervalID = setInterval( function(){
 
@@ -72,11 +72,9 @@ function inicializarCronometro( ) {
 
                 botao.attr('disabled', false);
 
-                campo.attr('disabled', true);
-
                 clearInterval(intervalID);
 
-                campo.toggleClass('campo-desativado');
+                finalizaJogo();
 
             }
 
@@ -86,6 +84,15 @@ function inicializarCronometro( ) {
 
     })
 }
+
+
+function finalizaJogo() {
+
+    campo.attr('disabled', true);
+    campo.toggleClass('campo-desativado');
+    inserePlacar();
+}
+
 
 
 
@@ -105,16 +112,22 @@ function reiniciarJogo( ) {
 
 }
 
+
 function inicializaMarcadores( ) {
 
     campo.on('input', function () {
-
+    // console.log("ECMA Script 6".startsWith("E"));
         var digitado = campo.val()
-        var comparavel = frase.substr(0, digitado.length )
+        var comparavel = frase.startsWith(digitado)
+        // var comparavel = frase.substring(digitado.length,0);
+        // digitado == comparavel ? console.log('ok') : console.log('errado');
+        // console.log(digitado == comparavel);
 
-        digitado == comparavel ? console.log('ok') : console.log('errado');
+        console.log('digitado: '+ digitado);
+        console.log('comparavel '+ comparavel);
 
-        if ( digitado == comparavel ){
+
+        if ( comparavel ){
 
             campo.removeClass('borda-vermelha')
             campo.addClass('borda-verde')
@@ -126,9 +139,18 @@ function inicializaMarcadores( ) {
             campo.addClass('borda-vermelha')
         }
 
+
+        // if ( digitado == comparavel ){
+
+        //     campo.removeClass('borda-vermelha')
+        //     campo.addClass('borda-verde')
+
+
+        // } else {
+
+        //     campo.removeClass('borda-verde')
+        //     campo.addClass('borda-vermelha')
+        // }
+
     })
 }
-
-
-console.log("ECMA Script 6".startsWith("ECMdA"));
-
