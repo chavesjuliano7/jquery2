@@ -3,5 +3,9 @@
         "campo",
         "digitacao",
         "log"
-    ]
+    ],
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+    "html.format.indentInnerHtml": true,
+    "html.format.indentHandlebars": true
 }

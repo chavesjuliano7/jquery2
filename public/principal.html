@@ -1,83 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="css/libs/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<body lang="pt-br">
 
-  <link rel="stylesheet" href="css/estilos.css">
-  <title>Alura Typer</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/libs/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<body>
-  <div class="container">
-    <h1 class="center">Alura Type</h1>
+        <link rel="stylesheet" href="css/estilos.css">
+        <title>Alura Typer</title>
+    </head>
 
-    <p class="frase center">cibelle chaves miyai</p>
+    <body>
+        <div class="container">
+            <h1 class="center">Alura Type</h1>
+            <p class="frase center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quod hic
+                doloremque perspiciatis a qui est perferendis ipsum? Sint officiis harum veritatis modi magni sequi illo
+                consequatur sapiente maiores sit.</p>
 
-    <ul class="informacoes center">
+            <ul class="informacoes center">
+                <li>
+                    <i class="small material-icons icone">description</i>
+                    <span id="tamanho-frase">30</span>palavras
+                </li>
+                <li>
+                    <i class="small material-icons icone">query_builder</i>
+                    <span class="tempo-segundos">1</span>segundos
+                </li>
+            </ul>
 
-      <li>
+            <textarea class="campo-digitacao" cols="30" rows="10"></textarea>
 
-        <i class="small material-icons icone">description</i>
-        <span id="tamanho-frase">30</span>palavras
+            <div class="botoes">
 
-      </li>
+                <a id="botao-reiniciar" disabled="disabled" class="btn-floating  btn-large center-alignwaves-light red">
+                    <i class="material-icons">restore</i>
+                </a>
+                <a id="botao-placar" class="btn-floating btn-large waves-effect waves-light green">
+                    <i class="material-icons">assignment</i>
+                </a>
+                <a id="botao-frase" class="btn-floating btn-large waves-effect waves-light blue">
+                    <i class="material-icons">shuffle</i>
+                </a>
 
-      <li>
+            </div>
 
-        <i class="small material-icons icone">query_builder</i>
-        <span class="tempo-segundos">1</span> segundos</li>
+            <ul class='center'>
+                <li>
+                    <span class="contador-caracteres">0</span>
+                    caracteres
+                </li>
+                <li>
+                    <span class="contador-palavras">0</span>
+                    palavras
+                </li>
+            </ul>
 
-    </ul>
+            <section class="placar">
+                <h3 class="center">Placar</h3>
 
-    <textarea class="campo-digitacao" cols="30" rows="10"></textarea>
+                <table class="centered bordered striped">
 
-    <div class="botoes">
-        <a id="botao-reiniciar" disabled class="btn-floating  btn-large center-alignwaves-light red">
-          <i class="material-icons">restore</i>
-        </a>
+                    <thead>
+                        <tr>
+                            <th>Usuário</th>
+                            <th>No. de palavras</th>
+                            <th>Remover</th>
+                        </tr>
+                    </thead>
 
-    </div>
+                    <tbody>
+                        <tr>
+                            <td>Douglas</td>
+                            <td>10</td>
+                            <td>
+                                <a href="#" class="botao-remover">
+                                    <i class="small material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
 
-    <ul class='center'>
+                        <tr>
+                            <td>Edgar</td>
+                            <td>11</td>
+                            <td>
+                                <a href="#" class="botao-remover">
+                                    <i class="small material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
 
-      <li><span class="contador-caracteres">0</span> caracteres</li>
-      <li><span class="contador-palavras">0</span> palavras</li>
+                        <tr>
+                            <td>Flavio</td>
+                            <td>15</td>
+                            <td>
+                                <a href="#" class="botao-remover">
+                                    <i class="small material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
 
-    </ul>
-    <section class="placar">
-      <h3 class="center">Placar</h3>
-      <table class="centered bordered striped">
-        <thead>
-          <tr>
-            <th>Usuário</th>
-            <th>No. de palavras</th>
-            <th>Remover</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Douglas</td>
-            <td>10</td>
-            <td>
-              <a href="#" class="botao-remover">
-                  <i class="small material-icons">delete</i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                        <tr>
+                            <td>Mario</td>
+                            <td>30</td>
+                            <td>
+                                <a href="#" class="botao-remover">
+                                    <i class="small material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
 
-    </section>
-  </div>
-  <script src="js/jquery.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/placar.js"></script>
+                </table>
+            </section>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/placar.js"></script>
+        <script src="js/frase.js"></script>
+
+    </body>
+
 </body>
-
-</html>
-
-
-
