@@ -35,3 +35,19 @@ body {
 
 }
 
+#erro{
+    color:red;
+    display: none;
+}
+
+#spinner {
+    display: none;
+}
+
+#frase-id{
+    text-align: center;
+    width: 40px;
+    border-bottom-color: cyan;
+    border-bottom-width: 2px;
+
+}

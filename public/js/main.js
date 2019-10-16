@@ -1,6 +1,6 @@
 var tempoInicial = $( '.tempo-segundos' ).text();
 var campo= $('.campo-digitacao')
-var frase = $('.frase').text()
+
 
 
 // $(document).ready( function () {
@@ -16,6 +16,8 @@ var frase = $('.frase').text()
 // })
 
 $(function(){
+
+    fraseAleatoria()
     atualizarTamanhoDaFrase();
     inicializarContadores();
     inicializarCronometro();
@@ -23,10 +25,11 @@ $(function(){
     $('#botao-reiniciar').click(reiniciarJogo)
     $('.botao-remover').on('click', deletaLinha);
 
+
 })
 
 
-function atualizarTamanhoDaFrase( ) {
+function atualizarTamanhoDaFrase() {
 
     var frase = $(".frase").text();
 
@@ -57,10 +60,11 @@ function inicializarContadores( ) {
 
 function inicializarCronometro( ) {
 
-    var tempoRestante = parseInt( $( '.tempo-segundos' ).text() );
+
     var botao = $('#botao-reiniciar')
 
     campo.one('focus', function( ){
+        var tempoRestante = parseInt( $( '.tempo-segundos' ).text() );
 
         botao.attr('disabled', true);
 
@@ -103,13 +107,14 @@ function reiniciarJogo( ) {
     $('.contador-palavras').text('0')
     campo.toggleClass('campo-desativado');
 
+
     campo.attr('disabled', false)
     campo.val('');
     campo.removeClass('borda-verde')
     campo.removeClass('borda-vermelha')
 
     inicializarCronometro( )
-
+    fraseAleatoria();
 }
 
 
@@ -117,6 +122,7 @@ function inicializaMarcadores( ) {
 
     campo.on('input', function () {
     // console.log("ECMA Script 6".startsWith("E"));
+        var frase = $('.frase').text()
         var digitado = campo.val()
         var comparavel = frase.startsWith(digitado)
         // var comparavel = frase.substring(digitado.length,0);

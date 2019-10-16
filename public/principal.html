@@ -14,18 +14,20 @@
     <body>
         <div class="container">
             <h1 class="center">Alura Type</h1>
-            <p class="frase center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quod hic
-                doloremque perspiciatis a qui est perferendis ipsum? Sint officiis harum veritatis modi magni sequi illo
-                consequatur sapiente maiores sit.</p>
+            <p id="frase-texto" class="frase center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="center">
+                <img src="img/spinner.gif" alt="imagem de um circulo rodando" id="spinner">
+                <p class=""  id="erro">Ocorreu um erro, por favor tente novamente.</p>
+            </div>
 
             <ul class="informacoes center">
                 <li>
                     <i class="small material-icons icone">description</i>
-                    <span id="tamanho-frase">30</span>palavras
+                    <span id="tamanho-frase"></span> palavras
                 </li>
                 <li>
                     <i class="small material-icons icone">query_builder</i>
-                    <span class="tempo-segundos">1</span>segundos
+                    <span class="tempo-segundos"></span> segundos
                 </li>
             </ul>
 
@@ -42,6 +44,10 @@
                 <a id="botao-frase" class="btn-floating btn-large waves-effect waves-light blue">
                     <i class="material-icons">shuffle</i>
                 </a>
+                <a id="botao-frase-id" class="btn-floating btn-large waves-effect waves-light cyan ">
+                        <i class="material-icons">repeat_one</i>
+                </a>
+                <input type="number" id="frase-id" min="0" value="0">
 
             </div>
 
@@ -119,7 +125,6 @@
         <script src="js/main.js"></script>
         <script src="js/placar.js"></script>
         <script src="js/frase.js"></script>
-
     </body>
 
 </body>
