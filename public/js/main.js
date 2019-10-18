@@ -18,6 +18,7 @@ var campo= $('.campo-digitacao')
 $(function(){
 
     fraseAleatoria()
+    atualizaPlacar()
     atualizarTamanhoDaFrase();
     inicializarContadores();
     inicializarCronometro();
@@ -128,10 +129,6 @@ function inicializaMarcadores( ) {
         // var comparavel = frase.substring(digitado.length,0);
         // digitado == comparavel ? console.log('ok') : console.log('errado');
         // console.log(digitado == comparavel);
-
-        console.log('digitado: '+ digitado);
-        console.log('comparavel '+ comparavel);
-
 
         if ( comparavel ){
 

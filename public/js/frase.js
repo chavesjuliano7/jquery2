@@ -73,7 +73,7 @@ function gerarNumeroAleatorio(data) {
 
 
 function buscaFrase() {
-
+    $('#spinner').toggle();
     var fraseId = $('#frase-id').val();
     var dados = {id: fraseId}
 
@@ -81,18 +81,29 @@ function buscaFrase() {
 
     $.get(servidor,dados,trocaFrase)
 
-        // var frase = data[fraseID].texto
-        // console.log(data);
+    .fail(function(){
 
+        $("#erro").toggle();
 
-        //  ;
+        setTimeout(function(){
+
+            $("#erro").toggle();
+
+        },2000);
+    })
+
+    .always(function(){
+
+        $("#spinner").toggle();
+    });
 
 }
 
 function trocaFrase(data) {
 
     $('#frase-texto').text(data.texto)
-
     $( '.tempo-segundos' ).text(data.tempo);
     atualizarTamanhoDaFrase();
+    atualizaTempoInicial(data.tempo);
+
 }

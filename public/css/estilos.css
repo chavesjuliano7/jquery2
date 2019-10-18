@@ -51,3 +51,7 @@ body {
     border-bottom-width: 2px;
 
 }
+#botao-sync{
+    float: right;
+    clear: both;
+}
