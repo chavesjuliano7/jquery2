@@ -26,7 +26,18 @@ $(function(){
     $('#botao-reiniciar').click(reiniciarJogo)
     $('.botao-remover').on('click', deletaLinha);
 
+    // botoa de inserir conteudo no formulario
+    $('#usuarios').selectize({
+        create: true,
+        sortField: 'text'
+    });
 
+    // tooltipster mensagem de fala no botão
+    $('.tooltip').tooltipster({
+        trigger: 'click',
+
+
+    });
 })
 
 

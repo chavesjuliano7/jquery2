@@ -6,7 +6,11 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="css/libs/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+        <!-- Import CSS Selectize -->
+        <link rel="stylesheet" href="css/libs/selectize.default.css">
+        <!-- Import CSS Tooltipster -->
+        <link rel="stylesheet" href="css/libs/tooltipster.bundle.min.css">
+        <!-- Importa CSS usuario -->
         <link rel="stylesheet" href="css/estilos.css">
         <title>Alura Typer</title>
     </head>
@@ -50,7 +54,16 @@
 
                 <input type="number" id="frase-id" min="0" value="0">
 
-                <a id="botao-sync" class="btn-floating btn-large waves-effect waves-light yellow">
+                <div class="select-usuarios">
+                    <select name="" id="usuarios">
+                        <option value=""></option>
+                        <!-- <option value="Francisco">Francisco</option>
+                        <option value="Mario">Mario</option>
+                        <option value="Fabiano">Fabiano</option> -->
+                    </select>
+                </div>
+
+                <a id="botao-sync" title="Sicronizado com Sucesso" class="tooltip btn-floating btn-large waves-effect waves-light yellow">
                     <i class="material-icons">swap_vert</i>
                 </a>
 
@@ -111,6 +124,8 @@
         <script src="js/main.js"></script>
         <script src="js/placar.js"></script>
         <script src="js/frase.js"></script>
+        <script src="js/selectize.js"></script>
+        <script src="js/tooltipster.bundle.js"></script>
     </body>
 
 </body>
